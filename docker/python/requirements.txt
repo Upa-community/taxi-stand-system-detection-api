@@ -43,7 +43,7 @@ youtube_dl
 datetime
 ImageHash
 python-dotenv
-youtube-dl
 asyncio
 boto3
+pafy
 ultralytics
