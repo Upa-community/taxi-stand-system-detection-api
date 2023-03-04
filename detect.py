@@ -5,13 +5,14 @@ import pafy
 from ultralytics import YOLO
 
 def check_directory():
-    if os.listdir("./detect_images"):
+    if os.path.isdir("./detect_images"):
         shutil.rmtree("./detect_images")
-        os.mkdir("./detect_images")
     
-    if os.listdir("./runs"):
+    if os.path.isdir("./runs"):
         shutil.rmtree("./runs")
-        os.mkdir("./runs")
+
+    os.mkdir("./detect_images")
+    os.mkdir("./runs")
 
 def get_images():
     id = 1
