@@ -7,7 +7,7 @@ docker-compose up -d --build
 ```
 2.コンテナに入る
 ```
-docker container exec -it taxi-stand-system-detection-api_python_1 bash
+docker container exec -it taxi-stand-system-detection-api-python-1 bash
 ```
 3.実行
 ```
