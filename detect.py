@@ -79,6 +79,17 @@ def update_database(update_data):
         else:
             day_list = spots_day_count.split(",")
             day_list.append(spots_count)
+
+            if len(day_list) >= 25:
+                day_name = ""
+                day_list_backup = ",".join(map(str, day_list))
+                cursor.execute("SELECT * FROM days WHERE spots_id =%s" % (spots_id))
+                day_data = cursor.fetchall()
+                if len(day_data) >= 35:
+                    cursor.execute("DELETE FROM days WHERE spots_id = %s AND WHERE id = (SELECT MIN(id) FROM days)" % (spots_id)) 
+                    cursor.execute("INSERT INTO days (spots_id, days_name, days_count) VALUES ('%s', '%s', '%s')" % (spots_id, day_name, day_list_backup))
+                else:
+                    cursor.execute("INSERT INTO days (spots_id, days_name, days_count) VALUES ('%s', '%s', '%s')" % (spots_id, day_name, day_list_backup))
         
         if len(day_list) >= 25:
             day_list = [spots_count]
