@@ -11,5 +11,5 @@ docker container exec -it taxi-stand-system-detection-api-python-1 bash
 ```
 3.実行
 ```
-python detect.py
+python batch.py
 ```
