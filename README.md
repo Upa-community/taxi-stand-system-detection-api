@@ -14,7 +14,7 @@ docker container exec -it taxi-stand-system-detection-api-python-1 bash
 python batch.py
 ```
 ## API仕様
-POST:http://localhost:9000/api/detect/
+POST:[http://localhost:9000/api/detect/](http://localhost:9000/api/detect/)  
 ・リクエスト
 ```
 [
