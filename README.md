@@ -13,3 +13,31 @@ docker container exec -it taxi-stand-system-detection-api-python-1 bash
 ```
 python batch.py
 ```
+## API仕様
+POST:[http://localhost:9000/api/detect/](http://localhost:9000/api/detect/)  
+・リクエスト
+```
+[
+    {
+        "id": 1,
+        "spots_url": "https://www.youtube.com/watch?v=3kPH7kTphnE"
+    },
+    {
+        "id": 2,
+        "spots_url": "https://www.youtube.com/watch?v=9plqYTT-3w8"
+    }
+]
+```
+・レスポンス
+```
+[
+    {
+        "id": 1,
+        "count": 5
+    },
+    {
+        "id": 2,
+        "count": 8
+    }
+]
+```
